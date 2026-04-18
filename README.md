@@ -19,9 +19,11 @@ après-vente au sein d'un système unique, cohérent et intelligent.
 ============================
 
 ## 🏗️ Architecture du projet
+
 ImmoApp-Repo/
 ├── ImmoApp/          → Backend Spring Boot (API REST)
 └── immoapp_ia/       → Microservice IA Python FastAPI
+
 ============================
 
 ## 🚀 Technologies utilisées
