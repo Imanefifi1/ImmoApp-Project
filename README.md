@@ -8,7 +8,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 
----
+============================
 
 ## 📋 Description
 
@@ -16,13 +16,13 @@ ImmoApp est une application web intégrée destinée aux agences immobilières.
 Elle centralise la gestion des prospects, des biens immobiliers et du service
 après-vente au sein d'un système unique, cohérent et intelligent.
 
----
+============================
 
 ## 🏗️ Architecture du projet
 ImmoApp-Repo/
 ├── ImmoApp/          → Backend Spring Boot (API REST)
 └── immoapp_ia/       → Microservice IA Python FastAPI
----
+============================
 
 ## 🚀 Technologies utilisées
 
@@ -50,7 +50,7 @@ ImmoApp-Repo/
 | Next.js 14 | Framework frontend |
 | Tailwind CSS | Stylisation |
 
----
+============================
 
 ## 👥 Rôles utilisateurs
 
@@ -61,7 +61,7 @@ ImmoApp-Repo/
 | **AGENT_SAV** | Tickets, messages, résolution |
 | **CLIENT** | Biens, chatbot, tickets |
 
----
+============================
 
 ## 📦 Modules
 
@@ -78,7 +78,7 @@ ImmoApp-Repo/
 - **Catégorie IA** → CHAUD / TIÈDE / FROID
 - **Fallback local** → Si microservice indisponible
 
----
+============================
 
 ## ⚙️ Installation et lancement
 
@@ -126,49 +126,63 @@ jwt.secret=immoapp_secret_key_must_be_at_least_32_chars_long
 jwt.expiration=86400000
 ```
 
----
+============================
 
 ## 📡 Endpoints principaux
 
 ### Auth
-POST /api/auth/register  → Inscription
-POST /api/auth/login     → Connexion
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/register` | Inscription |
+| POST | `/api/auth/login` | Connexion |
 
 ### Biens
-GET    /api/biens                → Lister tous
-POST   /api/biens                → Créer
-GET    /api/biens/disponibles    → Biens disponibles
-GET    /api/biens/recherche      → Recherche filtrée
-PUT    /api/biens/{id}           → Modifier
-DELETE /api/biens/{id}           → Supprimer
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/biens` | Lister tous |
+| POST | `/api/biens` | Créer |
+| GET | `/api/biens/disponibles` | Biens disponibles |
+| GET | `/api/biens/recherche` | Recherche filtrée |
+| PUT | `/api/biens/{id}` | Modifier |
+| DELETE | `/api/biens/{id}` | Supprimer |
 
 ### Prospects
-GET   /api/prospects                    → Lister tous
-POST  /api/prospects                    → Créer
-PATCH /api/prospects/{id}/statut        → Changer statut
-POST  /api/prospects/interactions       → Ajouter interaction
-GET   /api/prospects/{id}/interactions  → Historique
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/prospects` | Lister tous |
+| POST | `/api/prospects` | Créer |
+| PATCH | `/api/prospects/{id}/statut` | Changer statut |
+| POST | `/api/prospects/interactions` | Ajouter interaction |
+| GET | `/api/prospects/{id}/interactions` | Historique |
 
 ### Tickets SAV
-GET   /api/tickets                  → Lister tous
-POST  /api/tickets                  → Créer ticket
-PATCH /api/tickets/{id}/statut      → Changer statut
-POST  /api/tickets/messages         → Ajouter message
-GET   /api/tickets/{id}/messages    → Voir messages
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/tickets` | Lister tous |
+| POST | `/api/tickets` | Créer ticket |
+| PATCH | `/api/tickets/{id}/statut` | Changer statut |
+| POST | `/api/tickets/messages` | Ajouter message |
+| GET | `/api/tickets/{id}/messages` | Voir messages |
 
 ### Chatbot
-GET  /api/chatbot/demarrer/{clientId}  → Démarrer conversation
-POST /api/chatbot/recommander          → Recommandations
-POST /api/chatbot/reaction             → LIKE/DISLIKE
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/chatbot/demarrer/{clientId}` | Démarrer conversation |
+| POST | `/api/chatbot/recommander` | Recommandations |
+| POST | `/api/chatbot/reaction` | LIKE/DISLIKE |
 
 ### Dashboard
-GET /api/dashboard  → Statistiques complètes
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/dashboard` | Statistiques complètes |
 
 ### Microservice IA
-POST /score    → Calculer score prospect
-GET  /health   → Vérifier état du service
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/score` | Calculer score prospect |
+| GET | `/health` | Vérifier état du service |
 
----
+============================
 
 ##  Modèle de données
 Role ──< User ──< Prospect ──< Interaction
@@ -176,7 +190,7 @@ Role ──< User ──< Prospect ──< Interaction
 └──< ProspectBien >──< BienImmobilier ──< Photo
 User ──< TicketSAV ──< Message
 
----
+============================
 
 ##  Score IA — Fonctionnement
 Score 0-39  → FROID   (peu intéressé)
@@ -189,7 +203,7 @@ Critères de calcul :
 - Statut du prospect
 - Localisation recherchée
 
----
+============================
 
 ##  Équipe :
 
