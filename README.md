@@ -187,24 +187,39 @@ jwt.expiration=86400000
 
 ============================
 
-##  Modèle de données
-Role ──< User ──< Prospect ──< Interaction
-│
-└──< ProspectBien >──< BienImmobilier ──< Photo
-User ──< TicketSAV ──< Message
+## 🗄️ Modèle de données
 
-============================
+| Relation | Description |
+|----------|-------------|
+| `Role` → `User` | Un rôle pour plusieurs utilisateurs |
+| `User` → `Prospect` | Un client a un profil prospect |
+| `Prospect` → `Interaction` | Un prospect a plusieurs interactions |
+| `Prospect` ↔ `BienImmobilier` | Via table ProspectBien (Many-to-Many) |
+| `BienImmobilier` → `Photo` | Un bien a plusieurs photos |
+| `User` → `TicketSAV` | Un agent SAV traite plusieurs tickets |
+| `TicketSAV` → `Message` | Un ticket contient plusieurs messages |
 
-##  Score IA — Fonctionnement
-Score 0-39  → FROID   (peu intéressé)
-Score 40-69 → TIÈDE   (intérêt modéré)
-Score 70-100→ CHAUD   (prêt à acheter)
+=============================
 
-Critères de calcul :
-- Budget disponible
-- Nombre d'interactions (LIKE, DISLIKE, QUESTION, VISITE)
-- Statut du prospect
-- Localisation recherchée
+## 🎯 Score IA — Fonctionnement
+
+| Score | Catégorie | Signification |
+|-------|-----------|---------------|
+| 0 — 39 | ❄️ FROID | Peu intéressé |
+| 40 — 69 | 🌤️ TIÈDE | Intérêt modéré |
+| 70 — 100 | 🔥 CHAUD | Prêt à acheter |
+
+### Critères de calcul
+
+| Critère | Impact |
+|---------|--------|
+| Budget disponible | +5 à +25 pts |
+| LIKE sur un bien | +10 pts |
+| DISLIKE sur un bien | -5 pts |
+| Visite du chatbot | +5 pts |
+| Statut prospect | +5 à +25 pts |
+| Nombre total interactions | +2 pts par interaction |
+
 
 ============================
 
