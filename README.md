@@ -1,4 +1,4 @@
-# 🏠 ImmoApp — Brique Immobilière
+#  ImmoApp — Brique Immobilière
 
 ## Avant-Vente & Après-Vente — CRM Immobilier Intelligent
 
@@ -10,7 +10,7 @@
 
 ============================
 
-## 📋 Description
+##  Description
 
 ImmoApp est une application web intégrée destinée aux agences immobilières.
 Elle centralise la gestion des prospects, des biens immobiliers et du service
@@ -18,7 +18,7 @@ après-vente au sein d'un système unique, cohérent et intelligent.
 
 ============================
 
-## 🏗️ Architecture du projet
+##  Architecture du projet
 
 ImmoApp-Repo/
 => ImmoApp/          → Backend Spring Boot (API REST)
@@ -27,7 +27,7 @@ ImmoApp-Repo/
 
 ============================
 
-## 🚀 Technologies utilisées
+##  Technologies utilisées
 
 ### Backend
 | Technologie | Version | Rôle |
@@ -55,7 +55,7 @@ ImmoApp-Repo/
 
 ============================
 
-## 👥 Rôles utilisateurs
+##  Rôles utilisateurs
 
 | Rôle | Permissions |
 |------|-------------|
@@ -66,9 +66,9 @@ ImmoApp-Repo/
 
 ============================
 
-## 📦 Modules
+##  Modules
 
-### ✅ Backend Spring Boot
+###  Backend Spring Boot
 - **Auth** → Register, Login, JWT
 - **Biens Immobiliers** → CRUD complet + Photos
 - **Prospects** → CRUD + Interactions + Score IA
@@ -76,7 +76,7 @@ ImmoApp-Repo/
 - **Chatbot** → Recommandation de biens
 - **Dashboard** → Statistiques et KPIs
 
-### ✅ Microservice IA
+###  Microservice IA
 - **Score prospect** → Calcul automatique (0-100)
 - **Catégorie IA** → CHAUD / TIÈDE / FROID
 - **Fallback local** → Si microservice indisponible
@@ -118,7 +118,7 @@ API IA disponible sur : `http://localhost:8000`
 
 Swagger IA : `http://localhost:8000/docs`
 
-## 🔐 Variables d'environnement
+##  Variables d'environnement
 
 Dans `ImmoApp/src/main/resources/application.properties` :
 ```properties
@@ -187,7 +187,7 @@ jwt.expiration=86400000
 
 ============================
 
-## 🗄️ Modèle de données
+##  Modèle de données
 
 | Relation | Description |
 |----------|-------------|
@@ -201,13 +201,13 @@ jwt.expiration=86400000
 
 =============================
 
-## 🎯 Score IA — Fonctionnement
+##  Score IA — Fonctionnement
 
 | Score | Catégorie | Signification |
 |-------|-----------|---------------|
-| 0 — 39 | ❄️ FROID | Peu intéressé |
-| 40 — 69 | 🌤️ TIÈDE | Intérêt modéré |
-| 70 — 100 | 🔥 CHAUD | Prêt à acheter |
+| 0 — 39 |  FROID | Peu intéressé |
+| 40 — 69 |  TIÈDE | Intérêt modéré |
+| 70 — 100 |  CHAUD | Prêt à acheter |
 
 ### Critères de calcul
 
